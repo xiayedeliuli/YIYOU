@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_chat"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f7f7f7">
+
+    <include layout="@layout/include_navi" />
+
+
+
+    <LinearLayout
+        android:id="@+id/matchino"
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:background="@drawable/button_normal_shape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/myname"
+                android:text="我的："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/myitem"
+                android:layout_toRightOf="@id/myname"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/myspace"
+                android:layout_toRightOf="@id/myitem"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/myDate"
+                android:layout_toRightOf="@id/myspace"
+                android:layout_marginLeft="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/mysure"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:text="未确认"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/othername"
+                android:text="对方："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/otheritem"
+                android:layout_toRightOf="@id/othername"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/otherspace"
+                android:layout_toRightOf="@id/otheritem"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/otherdate"
+                android:layout_toRightOf="@id/otherspace"
+                android:layout_marginLeft="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/othersure"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp"
+                android:text="未确认"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/sw_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rc_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/mimg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_record"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:background="@drawable/chat_top_voice_bg"
+            android:padding="10dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/iv_record"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/action_settings"
+                android:src="@mipmap/chat_icon_voice1" />
+
+            <TextView
+                android:id="@+id/tv_voice_tips"
+                style="@style/style_text_white"
+                android:layout_below="@id/iv_record"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="@string/voice_up_tips"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+
+    <include layout="@layout/include_chat_bottom_bar"/>
+</LinearLayout>

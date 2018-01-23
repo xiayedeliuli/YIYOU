@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:background="#ffcc33"
+        android:id="@+id/top"
+       android:layout_below="@id/top1"
+        android:layout_width="match_parent"
+        android:layout_height="63dip"
+        >
+        <ImageView
+            android:layout_marginTop="15dp"
+            android:visibility="gone"
+            android:id="@+id/open"
+            android:src="@drawable/three"
+            android:layout_marginLeft="15dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="22dp" />
+
+        <ImageView
+            android:layout_marginTop="25dp"
+            android:id="@+id/write"
+            android:layout_marginRight="12dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/upwrite"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_below="@id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/imss"
+                android:background="#d7d7d7"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" >
+
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:textColor="#fff"
+                    android:textSize="24sp"
+                    android:text="您尚未上传照片"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <android.support.v4.view.ViewPager
+                android:visibility="gone"
+                android:scaleType="centerCrop"
+                android:id="@+id/im"
+                android:background="#ededed"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <TextView
+                android:id="@+id/vshuzi"
+                android:layout_marginRight="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="260dp"
+                android:layout_centerHorizontal="true"
+                android:text="1/3"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                android:layout_marginTop="292dp"
+                android:background="@drawable/linelayout_circle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginTop="130dp"
+                    android:id="@+id/abovew"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="35dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginTop="10dp"
+                                    android:id="@+id/weiyue"
+                                    android:textColor="#363636"
+                                    android:text="违约次数"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:layout_marginTop="10dp"
+                                    android:layout_below="@id/weiyue"
+                                    android:text="0"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:layout_alignParentRight="true"
+                                    android:background="#e4e4e4"
+                                    android:layout_width="1dp"
+                                    android:layout_height="60dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent">
+
+                            <RelativeLayout
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="35dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_marginTop="10dp"
+                                    android:id="@+id/weiyue1"
+                                    android:textColor="#363636"
+                                    android:text="赴约率"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:layout_marginTop="10dp"
+                                    android:layout_below="@id/weiyue1"
+                                    android:text="100%"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:background="#f7f7f7"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp">
+
+                        <TextView
+                            android:textSize="14sp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="35dp"
+                            android:text="个人信息"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:textColor="#363636"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="35dp"
+                            android:text="学校"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:text="南京财经大学"
+                            android:id="@+id/username1"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="105dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:background="#f7f7f7"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp">
+
+                        <TextView
+                            android:textSize="14sp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="35dp"
+                            android:text="兴趣爱好"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:textColor="#363636"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="35dp"
+                                android:text="运动"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/yundong"
+                                android:textSize="15sp"
+                                android:textColorHint="#dedede"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="105dp"
+                                android:hint="你还没有填写哦"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginLeft="35dp"
+                            android:background="#f5f5f5"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:textColor="#363636"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="35dp"
+                                android:text="音乐"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/yinyue"
+                                android:textColorHint="#dedede"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="105dp"
+                                android:hint="你还没有填写哦"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginLeft="35dp"
+                            android:background="#f5f5f5"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:textColor="#363636"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="35dp"
+                                android:text="书籍"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/shuji"
+                                android:textColorHint="#dedede"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="105dp"
+                                android:hint="你还没有填写哦"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginLeft="35dp"
+                            android:background="#f5f5f5"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:textColor="#363636"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="35dp"
+                                android:text="电影"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/dianying"
+                                android:textColorHint="#dedede"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="105dp"
+                                android:hint="你还没有填写哦"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginLeft="35dp"
+                            android:background="#f5f5f5"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:textColor="#363636"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="35dp"
+                                android:text="食物"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/shiwu"
+                                android:textColorHint="#dedede"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="105dp"
+                                android:hint="你还没有填写哦"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginLeft="35dp"
+                            android:background="#f5f5f5"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp">
+
+                            <TextView
+                                android:textColor="#363636"
+                                android:textSize="15sp"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="35dp"
+                                android:text="旅行"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/lvxing"
+                                android:textColorHint="#dedede"
+                                android:textSize="15sp"
+                                android:hint="你还没有填写哦"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="105dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/fram"
+                android:layout_marginTop="275dp"
+                android:layout_marginLeft="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="130dp">
+
+                <cn.bmob.imdemo.YiYou.Utils.CircleImageView
+                    android:id="@+id/mycircle"
+                    app:civ_border_width="5dp"
+                    app:civ_border_color="#fff"
+                    android:src="#ededed"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp" />
+
+                <RelativeLayout
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/username2"
+                        android:textColor="#363636"
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/infosexs"
+                        android:layout_toRightOf="@id/username2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:text="南京财经大学"
+                    android:id="@+id/userindex"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="57dp"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/userqianming"
+                    android:hint="您很懒，什么也没有说"
+                    android:layout_marginTop="95dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+</RelativeLayout>

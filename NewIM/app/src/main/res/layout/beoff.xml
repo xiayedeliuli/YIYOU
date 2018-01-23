@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+  <android.support.v4.view.ViewPager
+      android:scaleType="centerCrop"
+      android:id="@+id/login_0"
+      android:background="#fff"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+  </android.support.v4.view.ViewPager>
+
+
+  <LinearLayout
+      android:id="@+id/r1"
+      android:orientation="horizontal"
+      android:layout_marginBottom="68dp"
+      android:layout_marginLeft="145dp"
+      android:layout_alignParentBottom="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/y1"
+        android:background="@drawable/yindao2"
+        android:layout_width="8dp"
+        android:layout_height="8dp">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/y2"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/yindao"
+        android:layout_width="8dp"
+        android:layout_height="8dp">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/y3"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/yindao"
+        android:layout_width="8dp"
+        android:layout_height="8dp">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/y4"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/yindao"
+        android:layout_width="8dp"
+        android:layout_height="8dp">
+
+    </RelativeLayout>
+
+  </LinearLayout>
+
+  <RelativeLayout
+      android:visibility="gone"
+      android:id="@+id/r2"
+      android:layout_marginBottom="38dp"
+      android:layout_marginLeft="128dp"
+      android:layout_alignParentBottom="true"
+      android:background="@drawable/beoff_normal"
+      android:layout_width="100dp"
+      android:layout_height="40dp">
+
+    <TextView
+        android:textColor="#fff"
+        android:layout_centerInParent="true"
+        android:textSize="18sp"
+        android:text="开始体验"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+  </RelativeLayout>
+
+
+</RelativeLayout>

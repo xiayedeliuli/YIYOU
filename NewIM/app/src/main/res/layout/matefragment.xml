@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f7f7f7">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/Toplay"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/top"
+                android:background="#ffcc33"
+                android:layout_width="match_parent"
+                android:layout_height="133dp">
+
+                <ImageView
+                    android:id="@+id/opendrawlayout_img"
+                    android:layout_marginTop="45dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/three"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:id="@+id/YIYOU_txt"
+                    android:textColor="#363636"
+                    android:textSize="30sp"
+                    android:text="YIYOU"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toplay"
+            android:orientation="vertical"
+            android:layout_marginTop="95dp"
+            android:background="@drawable/fragment1"
+            android:layout_width="match_parent"
+            android:layout_height="78dp">
+
+            <RelativeLayout
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="90dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:textColor="#363636"
+                    android:text="开始匹配"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_below="@id/title"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="还没有找到小伙伴？赶快去匹配吧！"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/RightHand_img"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/dianji363636"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <!--整个猫和牌子的View-->
+    <RelativeLayout
+       android:visibility="visible"
+       android:id="@+id/CatBillboard_Relayout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+               <!--猫头-->
+               <ImageView
+                   android:id="@+id/CatHead_img"
+                   android:layout_marginTop="100dp"
+                   android:layout_centerHorizontal="true"
+                   android:background="@mipmap/mao3"
+                   android:layout_width="400dp"
+                   android:layout_height="170dp" />
+
+               <!--牌子-->
+               <ImageView
+                   android:layout_below="@+id/CatHead_img"
+                   android:visibility="visible"
+                   android:layout_centerHorizontal="true"
+                   android:id="@+id/Billboard_img"
+                   android:background="@mipmap/mao7"
+                   android:layout_width="340dp"
+                   android:layout_height="140dp" />
+
+               <!--人数-->
+               <TextView
+                   android:layout_below="@+id/CatHead_img"
+                   android:id="@+id/Nearbynumber_tex"
+                   android:textSize="14sp"
+                   android:layout_marginTop="30dp"
+                   android:layout_centerHorizontal="true"
+                   android:textColor="#fff"
+                   android:text="附近小伙伴：测算中"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content" />
+
+             <!--带计时器有文字的匹配时牌子上显示的内容-->
+               <LinearLayout
+                   android:layout_below="@id/CatHead_img"
+                   android:visibility="gone"
+                   android:layout_centerInParent="true"
+                   android:id="@+id/MateStatus_Llayout"
+                   android:orientation="vertical"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+
+                   <cn.iwgang.countdownview.CountdownView
+                       android:layout_gravity="center"
+                       android:layout_marginTop="10dp"
+                       android:id="@+id/countdownView"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       app:isHideTimeBackground="true"
+                       app:isShowMinute="true"
+                       app:isShowSecond="true"
+                       app:timeTextColor="#fff"
+                       app:timeTextSize="22sp"
+                       app:isTimeTextBold="true"
+                       app:suffixGravity="center"
+                       app:suffixTextColor="#fff"
+                       app:suffixTextSize="20sp"
+                       app:suffixMinute=":"
+                       />
+
+                   <LinearLayout
+                       android:layout_gravity="center"
+                       android:id="@+id/lunbo"
+                       android:layout_marginTop="10dp"
+                       android:orientation="horizontal"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <ImageView
+                           android:src="@drawable/trumpet"
+                           android:layout_width="32dp"
+                           android:layout_height="32dp" />
+                       <TextView
+                           android:layout_gravity="center"
+                           android:text="似乎远远的瞄到了一个靓仔"
+                           android:id="@+id/MateStatus_txt"
+                           android:maxLines="1"
+                           android:textSize="18sp"
+                           android:textColor="#fff"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content" />
+
+                   </LinearLayout>
+
+                   <LinearLayout
+                       android:id="@+id/twoiconlay"
+                       android:layout_marginTop="5dp"
+                       android:orientation="horizontal"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content">
+                       <ImageView
+                           android:id="@+id/set"
+                           android:src="@drawable/set"
+                           android:layout_width="32dp"
+                           android:layout_height="32dp" />
+
+                       <ImageView
+                           android:id="@+id/tc"
+                           android:layout_marginLeft="210dp"
+                           android:src="@drawable/tc"
+                           android:layout_width="32dp"
+                           android:layout_height="32dp" />
+                   </LinearLayout>
+               </LinearLayout>
+   </RelativeLayout>
+
+
+    <ListView
+        android:scrollbars="none"
+        android:layout_marginBottom="65dp"
+        android:visibility="visible"
+        android:id="@+id/fragment1listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+
+    <RelativeLayout
+        android:id="@+id/noinfotx"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/kong"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:src="@mipmap/kong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

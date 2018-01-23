@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+   android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#fff">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/setback"
+            android:src="@drawable/left1"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:textColor="#474747"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ImageView
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_marginLeft="30dp"
+        android:textColor="#4d4d4d"
+        android:textSize="24sp"
+        android:layout_marginTop="30dp"
+        android:text="请输入短信验证码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginRight="30dp"
+        android:id="@+id/login_2_layout"
+        android:background="#ebebeb"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/number"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:textColor="#424242"
+            android:textSize="18sp"
+            android:layout_below="@id/number"
+            android:text="+86  "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:background="#ccc"
+            android:layout_width="1dp"
+            android:layout_height="40dp" />
+
+
+
+        <EditText
+            android:textColor="#424242"
+            android:layout_marginLeft="15dp"
+            android:text="13016937791"
+            android:focusable="true"
+            android:background="@null"
+            android:inputType="number"
+            android:layout_gravity="center"
+            android:id="@+id/login_2_et_phone"
+            android:textSize="18sp"
+            android:hint="                                                   "
+            android:layout_below="@id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginRight="30dp"
+        android:id="@+id/login_2_layout2"
+        android:background="#eee"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/login_2_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:layout_weight="10"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:background="@null"
+            android:inputType="number"
+            android:id="@+id/login_2_et_confirm"
+            android:textSize="18sp"
+            android:hint="验证码"
+            android:layout_below="@id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/timelogin2"
+           android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:text="60"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:id="@+id/chongxinhuoqu"
+            android:textSize="18sp"
+            android:textColor="#424242"
+            android:text="重新获取  "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/te"
+        android:textColor="#bababa"
+        android:textSize="12sp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="已将6位验证码发送到您的手机上，如果您未收到，60秒后可以点击重新获取短信验证码"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="#bababa"
+            android:textSize="12sp"
+            android:text="注册即表示同意亦友社交"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="12sp"
+            android:textColor="#5091e7"
+            android:text="《用户条款》"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/top1"
+        android:layout_alignParentTop="true"
+        android:background="#ffcc33"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <RelativeLayout
+        android:layout_below="@id/top1"
+        android:background="#ffcc33"
+        android:id="@+id/lay"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/setback"
+            android:src="@drawable/left1"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/headtext"
+            android:textColor="#474747"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:text="校园认证"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/relay"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="155dp">
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_marginTop="50dp"
+            android:textColor="#474747"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/indexinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:text="验证信息"
+            android:textColor="#3ca413"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/dingwei"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/layout_selector"
+            android:layout_width="match_parent"
+            android:layout_height="44dp">
+
+            <TextView
+                android:textColor="#363636"
+                android:textSize="16dp"
+                android:layout_centerInParent="true"
+                android:text="定位校区"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/ditu"
+        android:layout_below="@id/lay"
+        android:layout_above="@id/relay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</RelativeLayout>

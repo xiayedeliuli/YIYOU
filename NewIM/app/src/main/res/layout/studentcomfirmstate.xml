@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/com"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:textColor="#474747"
+                android:text="学号验证"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="本应用接入正方管理系统，仅验证您的身份信息，不会保留任何您的个人数据，请放心食用"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="wrap_content" />-->
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:textColor="#363636"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="45dp"
+                    android:text="学号"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:layout_marginLeft="40dp"
+                    android:inputType="number"
+                    android:id="@+id/xeuhao"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:background="@null"
+                    android:textSize="15sp"
+                    android:textColorHint="#ccc"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="45dp"
+                    android:hint="请输入您的学号"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginRight="45dp"
+                android:layout_marginLeft="45dp"
+                android:background="#ccc"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:textColor="#363636"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="45dp"
+                    android:text="密码"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:layout_marginRight="45dp"
+                    android:inputType="textPassword"
+                    android:id="@+id/mima"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:background="@null"
+                    android:textColorHint="#ccc"
+                    android:textSize="15sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:hint="请输入您的密码"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginRight="45dp"
+                android:layout_marginLeft="45dp"
+                android:background="#ccc"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/start"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginLeft="45dp"
+            android:background="@drawable/layout_selector"
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:text="开始验证"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        </LinearLayout>
+
+
+</LinearLayout>

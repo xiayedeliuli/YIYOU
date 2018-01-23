@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+ <include android:id="@+id/dongtai" layout="@layout/include_dongtainavi"
+     android:visibility="visible"/>
+
+ <LinearLayout
+     android:orientation="vertical"
+     android:id="@+id/divider"
+     android:layout_alignParentBottom="true"
+     android:background="@drawable/base_horizontal_line_red"
+     android:layout_width="match_parent"
+     android:layout_height="50dp">
+ </LinearLayout>
+
+
+ <android.support.v4.widget.SwipeRefreshLayout
+     android:layout_marginBottom="50dp"
+     android:id="@+id/swipe"
+     android:layout_below="@id/dongtai"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+
+  <ListView
+      android:id="@+id/list1"
+      android:descendantFocusability="beforeDescendants"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+  </ListView>
+
+
+ </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+
+
+
+
+ <!--<ListView-->
+     <!--android:layout_below="@id/list1"-->
+     <!--android:descendantFocusability="beforeDescendants"-->
+     <!--android:id="@+id/list2"-->
+     <!--android:layout_width="match_parent"-->
+     <!--android:layout_height="wrap_content">-->
+
+ <!--</ListView>-->
+
+ <!--<ListView-->
+     <!--android:layout_below="@id/list2"-->
+     <!--android:descendantFocusability="beforeDescendants"-->
+     <!--android:id="@+id/list3"-->
+     <!--android:layout_width="match_parent"-->
+     <!--android:layout_height="wrap_content">-->
+ <!--</ListView>-->
+
+
+
+
+ <FrameLayout
+     android:layout_above="@id/divider"
+     android:layout_centerVertical="true"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+   <RelativeLayout
+       android:layout_marginBottom="35dp"
+       android:layout_marginRight="20dp"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentRight="true"
+       android:id="@+id/jia"
+       android:background="@drawable/newinfo_normal"
+       android:layout_width="40dp"
+       android:layout_height="40dp">
+
+
+    <ImageView
+        android:src="@drawable/jia"
+        android:layout_centerInParent="true"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+   </RelativeLayout>
+
+
+  </RelativeLayout>
+
+
+ </FrameLayout>
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

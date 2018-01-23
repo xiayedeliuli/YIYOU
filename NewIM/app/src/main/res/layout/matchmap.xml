@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.mapapi.map.MapView
+
+        android:id="@+id/bmapview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.baidu.mapapi.map.MapView>
+
+    <LinearLayout
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp">
+
+        <ImageView
+            android:id="@+id/logo2"
+            android:layout_gravity="center"
+            android:src="@drawable/logo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:id="@+id/matchmaptoplay"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/matchmap_1"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp">
+
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ti"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/julipipei"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:text="距离剩余时间"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <cn.iwgang.countdownview.CountdownView
+            android:layout_marginRight="10dp"
+            app:timeTextSize="13sp"
+            android:id="@+id/count"
+            app:timeTextColor="#fff"
+            app:suffixTextColor="#fff"
+            android:layout_gravity="center"
+            app:isShowSecond="true"
+            app:isShowMinute="true"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fra"
+        android:visibility="visible"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/arrive"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="205dp">
+
+            <RelativeLayout
+                android:layout_marginTop="5dp"
+                android:id="@+id/circle"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/matchmap_selector"
+                android:layout_width="145dp"
+                android:layout_height="145dp">
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/mytexs"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:text="我已到达"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+
+            </RelativeLayout>
+
+            <!--<ImageView-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:id="@+id/hand"-->
+                <!--android:layout_centerHorizontal="true"-->
+                <!--android:src="@mipmap/hand"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp" />-->
+
+
+
+
+            <ImageView
+                android:id="@+id/mylocation"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:background="@mipmap/target"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <ImageView
+                android:id="@+id/mysetmap"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/mysetmap2"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/relay"
+        android:layout_above="@id/fra"
+        android:background="@mipmap/yuanhu"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_centerInParent="true"
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:src="@drawable/matchmapbottom"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/news"
+        android:layout_marginRight="15dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/layout_circlr2"
+        android:layout_width="40dp"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@drawable/xiaoxi_map"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/phone3"
+        android:layout_above="@id/news"
+        android:layout_marginRight="15dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/layout_circlr"
+        android:layout_width="40dp"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@drawable/phone_map"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/location"
+        android:layout_marginTop="20dp"
+        android:layout_above="@id/phone3"
+        android:layout_marginRight="15dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/layout_circlr"
+        android:layout_width="40dp"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@drawable/location_map"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

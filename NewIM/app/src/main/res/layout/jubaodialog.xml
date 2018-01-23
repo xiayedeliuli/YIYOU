@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/complain1"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textColor="#474747"
+            android:text="对方违约未达"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <RelativeLayout
+        android:id="@+id/complain2"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_centerInParent="true"
+            android:textSize="15sp"
+            android:textColor="#474747"
+            android:text="照片、资料作假"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <RelativeLayout
+        android:id="@+id/complain3"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_centerInParent="true"
+            android:textSize="15sp"
+            android:textColor="#474747"
+            android:text="诈骗/托"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/complain4"
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_centerInParent="true"
+            android:textSize="15sp"
+            android:textColor="#474747"
+            android:text="恶意骚扰，不文明语言"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <RelativeLayout
+        android:id="@+id/quxiao2"
+        android:background="#ebebeb"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:layout_centerInParent="true"
+            android:textSize="15sp"
+            android:text="取消"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

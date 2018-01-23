@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/dianji2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="#ededed"
+            android:id="@+id/gridimage"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

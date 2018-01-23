@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <!--<GridLayout-->
+        <!--android:columnCount="3"-->
+        <!--android:rowCount="8"-->
+        <!--android:layout_width="360dp"-->
+        <!--android:layout_height="235dp">-->
+
+
+        <!--<ImageView-->
+            <!--android:id="@+id/icon1"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon1"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/icon2"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon2"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/icon3"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon3"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+
+
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text="图书馆"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text="下午茶"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text=" 电影院"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/icon4"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon4"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/icon5"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon5"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/icon6"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon6"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text="ktv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text="篮球"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text="乒乓球"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/icon7"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon7"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/icon8"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon8"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+        <!--<ImageView-->
+            <!--android:id="@+id/icon9"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:src="@drawable/icon9"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text="约牌"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text="散步"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+        <!--<TextView-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textSize="15sp"-->
+            <!--android:layout_columnWeight="1"-->
+            <!--android:text="羽毛球"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"/>-->
+    <!--</GridLayout>-->
+    <!---->
+
+    <!--最外侧布局-->
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--里侧小布局1-->
+        <LinearLayout
+            android:gravity="center"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="图书馆"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon2"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="下午茶"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon3"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="电影院"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--里侧小布局2-->
+        <LinearLayout
+            android:gravity="center"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon4"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="KTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon5"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon5"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="篮球"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon6"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon6"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="乒乓球"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!--里侧小布局3-->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon7"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon7"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="约牌"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon8"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon8"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="散步"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="30dp"
+                android:orientation="vertical"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/icon9"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/icon9"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:layout_columnWeight="1"
+                    android:text="羽毛球"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

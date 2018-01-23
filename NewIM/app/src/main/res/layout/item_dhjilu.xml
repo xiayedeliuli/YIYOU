@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7">
+
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/url_dh"
+        android:background="#ededed"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/name_dh"
+                android:textSize="18sp"
+                android:textColor="#383838"
+                android:text="爱奇艺会员一个月"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="#5c5c5c"
+                android:id="@+id/beizhu_dh"
+                android:layout_marginTop="10dp"
+                android:textSize="12sp"
+                android:text="（请勿将账号与他人共享）"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/jiangpinimg"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:id="@+id/integral_dh"
+                    android:textSize="15sp"
+                    android:textColor="#830c61"
+                    android:text="8积分"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/duihuanlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:id="@+id/dhtxt"
+                android:textColor="#20b625"
+                android:text="正在处理"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="#919191"
+                android:id="@+id/dh_time"
+                android:layout_marginBottom="4dp"
+                android:gravity="bottom"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/dhtxt"
+                android:text="2017-09-08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

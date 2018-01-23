@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7">
+
+    <ImageView
+        android:background="#ffcc33"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <RelativeLayout
+        android:background="#ffcc33"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/heiback"
+            android:src="@drawable/left1"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:textColor="#000"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:text="违约名单"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/guize"
+            android:textSize="18sp"
+            android:text="规则："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/guize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="1:发布色情反动欺诈信息者进行公示"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="2.累计违约三次并未缴纳罚金者公示"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/heimingdanlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+    <!--<RelativeLayout-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/h1"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:src="@mipmap/ic_bakcright"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_toLeftOf="@id/h1"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:text="国贸院张三同学发布反动，色情信息，特此警告"-->
+            <!--android:textSize="20sp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</RelativeLayout>-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/h2"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:src="@mipmap/ic_bakcright"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_toLeftOf="@id/h2"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:text="体育院李四同学已累计未赴约3次，请珍惜信用"-->
+            <!--android:textSize="20sp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginBottom="15dp"-->
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/h3"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:src="@mipmap/ic_bakcright"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp" />-->
+
+        <!--<TextView-->
+            <!--android:layout_toLeftOf="@id/h3"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:text="经管院王二麻子同学在约会中恶意侵扰女同学，已报警处理"-->
+            <!--android:textSize="20sp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+
+
+
+    <!--</RelativeLayout>-->
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.bmob.imdemo">
+
+
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="24" />
+
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >    </uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >    </uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS" >    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+
+    <!-- 地理位置用到的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 监听网络的变化 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 设备休眠 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- sd卡存储 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 摄像头 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 通知震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+
+    <!--share sdk的权限-->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:name=".BmobIMApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/appicon1"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <service android:name=".YiYou.Myservice">
+
+        </service>
+
+        <activity android:name=".YiYou.UI.matchinfo"/>
+        <activity android:name=".YiYou.UI.heimingdan"/>
+        <activity android:name=".YiYou.UI.mypipei"/>
+        <activity android:name=".YiYou.UI.mywallet"/>
+        <activity android:name=".YiYou.UI.myset"/>
+        <activity android:name=".YiYou.UI.candelete3"/>
+         <activity android:name=".YiYou.UI.newinfo"/>
+        <activity android:name=".YiYou.UI.matchmap"/>
+        <activity android:name=".ui.LoginActivity" >
+        </activity>
+        <activity android:name=".YiYou.UI.comfirmstate"/>
+
+        <activity android:name=".ui.MainActivity" />
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".ui.SearchUserActivity" />
+        <activity android:name=".ui.UserInfoActivity"/>
+        <activity android:name=".ui.NewFriendActivity"/>
+
+        <!-- 下面是我自己登陆的包 -->
+       <activity android:name=".YiYou.mylogin.login_0">
+       </activity>
+        <activity android:name=".YiYou.mylogin.login_1">
+
+        </activity>
+
+        <activity android:name=".YiYou.mylogin.login_2">
+        </activity>
+
+        <activity android:name=".YiYou.mylogin.login_3">
+
+        </activity>
+
+        <activity android:name=".YiYou.mylogin.welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".YiYou.UI.mymainactivity">
+        </activity>
+        <activity android:name=".YiYou.UI.changeuserinfo"/>
+        <activity android:name=".YiYou.UI.changehead"/>
+        <activity android:name=".YiYou.UI.userinfomation"/>
+        <activity android:name=".YiYou.UI.myviewpager"/>
+        <activity android:name=".YiYou.UI.duihuanjiangpin"/>
+        <activity android:name=".YiYou.UI.duihuanjiangpinset"/>
+        <activity android:name=".YiYou.UI.Integraltask"/>
+        <activity android:name=".YiYou.UI.webview"/>
+
+
+
+        <activity
+            android:name=".ui.ChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+
+
+        <!-- bmobim start -->
+        <receiver android:name="cn.bmob.newim.core.ConnectChangeReceiver">
+            <intent-filter>
+                <action android:name="cn.bmob.action.RECONNECT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+
+
+        <service
+            android:name="cn.bmob.newim.core.service.BmobIMService"
+            android:process=":bmobcore" />
+        <service
+            android:name="cn.bmob.newim.core.service.NotifyService"
+            android:process=":bmobcore" />
+        <service android:name="cn.bmob.newim.core.service.ReConnectService" />
+        <service android:name="cn.bmob.newim.core.service.HeartBeatService" />
+
+        <!-- 设置bmob appkey -->
+        <meta-data
+            android:name="Bmob_APP_KEY"
+            android:value="901100c69ac332a8e740cb10016463b8" />
+        <!-- bmobim end -->
+
+        <!-- 设置百度地图 appkey -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="i5abTvIX587PXoWmagwAMYfGlXe8v9Bx" />
+        <!-- 百度地图 end -->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+
+        <!-- ShareSDK的activity -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+
+          <meta-data android:name="AuthorizeAdapter" android:value="cn.sharesdk.demo.MyAuthPageAdapter"/>
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!--集成line客户端登录授权，需要添如下格式的过滤器-->
+            <intent-filter>
+                <data android:scheme="line.1477692153" />
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="cn.sharesdk.tencent.qq.ReceiveActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent100371282" />
+            </intent-filter>
+        </activity>
+        <!-- 填写您从Mob开发者后台中得到的Appkey和AppSecret -->
+        <meta-data android:name="Mob-AppKey" android:value="2109e0d24609a"/>
+        <meta-data android:name="Mob-AppSecret" android:value="58bf48ce87f28ccb26de730824d395ea"/>
+
+
+    </application>
+
+
+
+</manifest>

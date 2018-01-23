@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:background="#ffcc33"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <RelativeLayout
+        android:background="#ffcc33"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/dhsetback"
+            android:src="@drawable/left1"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:textColor="#474747"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:text="积分兑换"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:background="#f7f7f7"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/jifen"
+            android:textSize="16sp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:text="我的积分 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:visibility="visible"
+            android:id="@+id/myjifen"
+            android:textColor="#830c61"
+            android:layout_centerVertical="true"
+            android:text="10"
+            android:layout_toRightOf="@id/jifen"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+      <RelativeLayout
+          android:id="@+id/duihuanset"
+          android:layout_marginRight="15dp"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+          <TextView
+              android:textColor="#20b625"
+              android:id="@+id/duihuan"
+              android:text="我的兑换"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+
+          <TextView
+              android:layout_below="@id/duihuan"
+              android:background="#20b625"
+              android:layout_width="55dp"
+              android:layout_height="1dp" />
+
+
+      </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/duihuanset2"
+            android:layout_marginRight="90dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="#830c61"
+                android:id="@+id/duihuan2"
+                android:text="获取积分"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_below="@id/duihuan2"
+                android:background="#830c61"
+                android:layout_width="55dp"
+                android:layout_height="1dp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+        <ListView
+            android:id="@+id/dhlistview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
+
+
+
+
+</LinearLayout>

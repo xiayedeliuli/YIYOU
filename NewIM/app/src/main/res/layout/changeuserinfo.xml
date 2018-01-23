@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/top1"
+        android:layout_alignParentTop="true"
+        android:background="#ffcc33"
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <RelativeLayout
+        android:layout_below="@id/top1"
+        android:background="#ffcc33"
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        >
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/setback"
+            android:src="@drawable/left1"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:textColor="#363636"
+            android:textSize="15sp"
+            android:layout_centerInParent="true"
+            android:text="编辑个人资料"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/folderup"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/up"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+    </RelativeLayout>
+
+
+
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_below="@id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical"
+                android:background="@drawable/linelayout_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                    <GridView
+                        android:scrollbars="none"
+                        android:id="@+id/grid"
+                        android:numColumns="4"
+                        android:layout_height="200dp"
+                        android:layout_width="wrap_content"
+                        android:stretchMode="columnWidth"
+                        android:gravity="center">
+
+                    </GridView>
+
+                <!--<LinearLayout-->
+                    <!--android:background="#f7f7f7"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="45dp">-->
+
+                    <!--<TextView-->
+                        <!--android:textSize="14sp"-->
+                        <!--android:layout_marginBottom="5dp"-->
+                        <!--android:layout_gravity="bottom"-->
+                        <!--android:layout_marginLeft="35dp"-->
+                        <!--android:text="个人信息"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content" />-->
+
+                <!--</LinearLayout>-->
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:textColor="#363636"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="35dp"
+                        android:text="昵称"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/ednicheng"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:background="@null"
+                        android:textSize="15sp"
+                        android:textColorHint="#dedede"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="105dp"
+                        android:hint="你还没有填写哦"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="35dp"
+                    android:background="#f5f5f5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:textColor="#363636"
+                        android:textSize="15sp"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="35dp"
+                        android:text="签名"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/edqianming"
+                        android:textCursorDrawable="@drawable/color_cursor"
+                        android:background="@null"
+                        android:textSize="15sp"
+                        android:textColorHint="#dedede"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="105dp"
+                        android:hint="你还没有填写哦"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="35dp"
+                    android:background="#f5f5f5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:background="#f7f7f7"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
+
+                    <TextView
+                        android:textSize="14sp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="35dp"
+                        android:text="兴趣爱好"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:textColor="#363636"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="35dp"
+                            android:text="运动"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/edyundong"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:background="@null"
+                            android:textSize="15sp"
+                            android:textColorHint="#dedede"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="105dp"
+                            android:hint="你还没有填写哦"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginLeft="35dp"
+                        android:background="#f5f5f5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:textColor="#363636"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="35dp"
+                            android:text="音乐"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/edyinyue"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:background="@null"
+                            android:textColorHint="#dedede"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="105dp"
+                            android:hint="你还没有填写哦"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginLeft="35dp"
+                        android:background="#f5f5f5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:textColor="#363636"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="35dp"
+                            android:text="书籍"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/edshuji"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:background="@null"
+                            android:textColorHint="#dedede"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="105dp"
+                            android:hint="你还没有填写哦"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginLeft="35dp"
+                        android:background="#f5f5f5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:textColor="#363636"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="35dp"
+                            android:text="电影"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/eddianying"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:background="@null"
+                            android:textColorHint="#dedede"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="105dp"
+                            android:hint="你还没有填写哦"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginLeft="35dp"
+                        android:background="#f5f5f5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:textColor="#363636"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="35dp"
+                            android:text="食物"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/edshiwu"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:background="@null"
+                            android:textColorHint="#dedede"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="105dp"
+                            android:hint="你还没有填写哦"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginLeft="35dp"
+                        android:background="#f5f5f5"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <TextView
+                            android:textColor="#363636"
+                            android:textSize="15sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="35dp"
+                            android:text="旅行"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:id="@+id/edlvxing"
+                            android:textCursorDrawable="@drawable/color_cursor"
+                            android:background="@null"
+                            android:textColorHint="#dedede"
+                            android:textSize="15sp"
+                            android:hint="你还没有填写哦"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="105dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

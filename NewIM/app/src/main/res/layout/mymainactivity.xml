@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".YiYou.UI.mymainactivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/myfragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:background="#fff"
+        android:id="@+id/lay_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:id="@+id/pipeilay"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginTop="4dp"
+                android:id="@+id/pipei"
+                android:background="@drawable/btn_pipei_selector"
+                android:layout_gravity="center"
+                android:layout_width="28dp"
+                android:layout_height="26dp" />
+
+            <TextView
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"
+                android:textColor="#ffcc33"
+                android:id="@+id/pipeitx"
+                android:layout_gravity="center"
+                android:text="匹配"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dongtailay"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginTop="3dp"
+                android:id="@+id/dongtai"
+                android:background="@drawable/btn_dongtai_selector"
+                android:layout_gravity="center"
+                android:layout_width="28dp"
+                android:layout_height="28dp" />
+
+
+            <TextView
+                android:textSize="12sp"
+                android:layout_marginTop="1dp"
+                android:textColor="#8a8a8a"
+                android:id="@+id/duorentx"
+                android:layout_gravity="center"
+                android:text="动态"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/xiaoxilay"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/xiaoxi"
+                    android:background="@drawable/btn_xiaoxi_selector"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp" />
+
+                <cn.bmob.imdemo.YiYou.Utils.CircleImageView
+                    android:id="@+id/xiaoyuandian"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/xiaoxi"
+                    android:src="@color/base_color_text_white"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp" />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:layout_marginRight="3dp"
+                android:textSize="12sp"
+                android:textColor="#8a8a8a"
+                android:id="@+id/dongtaitx"
+                android:layout_gravity="center"
+                android:text="消息"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/mylay"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/my"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/btn_myhead_selector"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+
+            <ImageView
+                android:layout_marginTop="2dp"
+                android:layout_toRightOf="@id/my"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/myiv_conversation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/msg_tips"
+                android:contentDescription="@string/action_settings"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+
+            <TextView
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"
+                android:textColor="#8a8a8a"
+                android:id="@+id/xiaoxitx"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/my"
+                android:layout_gravity="center"
+                android:text="我的"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_above="@id/lay_bottom"
+        android:background="#cccccc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+</RelativeLayout>

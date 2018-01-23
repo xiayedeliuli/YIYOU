@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- <第三个信息图>-->
+    <FrameLayout
+        android:id="@+id/frame3"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:background="#ededed"
+                android:id="@+id/imageview3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <ImageView
+                android:alpha="0"
+                android:background="#ccc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <cn.bmob.imdemo.YiYou.Utils.CircleImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/pipeitou3"
+                android:src="#ccc"
+                android:layout_width="45dp"
+                android:layout_height="45dp" />
+
+            <TextView
+                android:id="@+id/pipeixiangmu3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/pipeitou3"
+                android:textSize="20sp"
+                android:textColor="#f2f2f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/pipeishijian3"
+                android:layout_below="@id/pipeixiangmu3"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/pipeitou3"
+                android:textSize="17sp"
+                android:textColor="#f2f2f2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/yinzhang"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/yinzhang_jinxing"
+                android:layout_width="90dp"
+                android:layout_height="40dp" />
+
+                <cn.iwgang.countdownview.CountdownView
+                    app:suffixDay="天"
+                    app:isShowDay="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    app:isShowHour="true"
+                    android:id="@+id/counttime3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    app:isHideTimeBackground="true"
+                    app:isShowMinute="true"
+                    app:isShowSecond="true"
+                    app:timeTextColor="#ffcc33"
+                    app:timeTextSize="25sp"
+                    app:isTimeTextBold="true"
+                    app:suffixGravity="center"
+                    app:suffixTextColor="#fff"
+                    app:suffixTextSize="22sp"
+                    app:suffixMinute="分"
+                    app:suffixHour="时"
+                    />
+
+            <cn.iwgang.countdownview.CountdownView
+                android:visibility="gone"
+                app:suffixDay="天"
+                app:isShowDay="true"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                app:isShowHour="true"
+                android:id="@+id/counttime4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:isHideTimeBackground="true"
+                app:isShowMinute="true"
+                app:isShowSecond="true"
+                app:timeTextColor="#f53329"
+                app:timeTextSize="25sp"
+                app:isTimeTextBold="true"
+                app:suffixGravity="center"
+                app:suffixTextColor="#fff"
+                app:suffixTextSize="22sp"
+                app:suffixMinute="分"
+                app:suffixHour="时"
+                />
+
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</LinearLayout>

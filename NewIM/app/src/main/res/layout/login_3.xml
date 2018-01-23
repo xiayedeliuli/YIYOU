@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+   android:layout_height="match_parent"
+    android:background="#f7f7f7"
+  >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/setback"
+            android:src="@drawable/left1"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:textColor="#474747"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <ImageView
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <cn.bmob.imdemo.YiYou.Utils.CircleImageView
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:id="@+id/mytouxiang"
+        android:layout_gravity="center"
+        android:src="@drawable/mytou6"
+        android:layout_width="140dp"
+        android:layout_height="140dp" />
+
+    <!--<ImageView-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:src="@drawable/icon5"-->
+        <!--android:layout_width="140dp"-->
+        <!--android:layout_height="140dp" />-->
+
+
+    <LinearLayout
+        android:background="#fff"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:textColor="#474747"
+            android:textSize="20sp"
+            android:text="昵称"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:maxLength="6"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:textColorHint="#CCCCCC"
+            android:textColor="#404040"
+            android:id="@+id/login3_nickname"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:hint="请输入您的常用昵称"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:background="#f7f7f7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:textColor="#474747"
+            android:textSize="20sp"
+            android:text="性别"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:background="@null"
+            android:visibility="visible"
+            android:textColor="#cccccc"
+            android:id="@+id/login3_sex"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:text="请选择您的真实性别"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/sex1"
+            android:visibility="gone"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center"
+            android:textColor="#cccccc"
+            android:textSize="20sp"
+            android:text="男"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/sex2"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_marginLeft="40dp"
+            android:textColor="#cccccc"
+            android:textSize="20sp"
+            android:text="女"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:background="#f7f7f7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:textColor="#474747"
+            android:textSize="20sp"
+            android:text="学校"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:inputType="number"
+            android:id="@+id/studentkey"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:textColor="#404040"
+            android:textColorHint="#CCCCCC"
+            android:layout_marginLeft="30dp"
+            android:textSize="20sp"
+            android:hint="请选择您所在的学校"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:layout_marginLeft="25dp"
+            android:visibility="gone"
+            android:id="@+id/spinner"
+            android:textColorHint="#CCCCCC"
+            android:layout_marginRight="55dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </Spinner>
+
+    </LinearLayout>
+
+    <ImageView
+        android:background="#f7f7f7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:textColor="#474747"
+            android:textSize="20sp"
+            android:text="推荐人"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/studentpass"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:textColor="#404040"
+            android:textColorHint="#CCCCCC"
+            android:layout_marginLeft="13dp"
+            android:textSize="20sp"
+            android:hint="如有邀请码请您填写"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:textColor="#5e5e5e"
+        android:textSize="12sp"
+       android:layout_marginRight="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="为确保用户为在校大学生，程序自动接入正方系统验证您的身份，不会保存或涉及您的隐私，请放心填写"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="#f7f7f7"
+        android:background="#525252"
+        android:text="确定注册"
+        android:onClick="tijiao"
+        android:id="@+id/tijiao"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+</LinearLayout>

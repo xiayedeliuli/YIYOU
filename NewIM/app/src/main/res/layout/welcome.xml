@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+   >
+
+
+   <ImageView
+       android:background="@mipmap/welcome3"
+       android:scaleType="centerCrop"
+       android:id="@+id/welcome"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+   </ImageView>
+
+   <RelativeLayout
+       android:visibility="gone"
+       android:id="@+id/r"
+       android:layout_marginRight="10dp"
+       android:layout_marginTop="15dp"
+       android:layout_alignParentTop="true"
+       android:layout_alignParentRight="true"
+       android:background="@drawable/beoff_normal"
+       android:layout_width="65dp"
+       android:layout_height="35dp">
+
+      <TextView
+          android:textColor="#fff"
+          android:layout_centerInParent="true"
+          android:textSize="18sp"
+          android:text="广告"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content" />
+
+
+   </RelativeLayout>
+
+
+
+
+</RelativeLayout>

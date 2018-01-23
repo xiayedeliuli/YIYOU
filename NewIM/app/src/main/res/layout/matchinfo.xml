@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+
+
+        <LinearLayout
+            android:background="#ccc"
+            android:id="@+id/matchlay"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/matchinfoback"-->
+                    <!--android:layout_marginLeft="15dp"-->
+                    <!--android:src="@drawable/lefty"-->
+                    <!--android:layout_width="32dp"-->
+                    <!--android:layout_height="32dp" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:layout_marginLeft="15dp"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:src="@drawable/icon5"-->
+                    <!--android:layout_width="36dp"-->
+                    <!--android:layout_height="36dp" />-->
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/matchitem"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="#474747"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/matchtime"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="#ccc"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/zhengzaijinxing"
+                android:textColor="#474747"
+                android:enabled="false"
+                android:layout_gravity="center"
+                android:text="正在进行"
+                android:background="@drawable/button_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/arrive"
+                android:textColor="#474747"
+                android:enabled="false"
+                android:text="双方未到达"
+                android:background="@drawable/button_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/cancel"
+                android:textColor="#474747"
+                android:enabled="false"
+                android:text="双方未取消"
+                android:background="@drawable/button_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+   <!--文字大布局-->
+    <RelativeLayout
+        android:id="@+id/realtimelocantion"
+        android:background="@drawable/layout_click_selector"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="#ccc"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <!--文字小布局-->
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:id="@+id/sa"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="14sp"
+                    android:text="集合地点:"
+                    android:textColor="#474747"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/matchspace"
+                    android:textColor="#5c5c5c"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="17dp"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/loacation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:minLines="2"
+                    android:layout_gravity="center"
+                    android:textSize="12sp"
+                    android:text="请在约定时间前后15分钟内按“我已到达”按钮"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/right"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_below="@id/sa"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:background="#ccc"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+    <FrameLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_normal_shape"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <cn.bmob.imdemo.YiYou.Utils.CircleImageView
+                android:id="@+id/matchinfoimg"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:src="#ccc"
+                android:layout_width="45dp"
+                android:layout_height="45dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="28dp"
+                android:layout_toRightOf="@id/matchinfoimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/matchname"
+                    android:textColor="#363636"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/matchsex"
+                    android:src="@drawable/girl"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <Button
+            android:textColor="#737373"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="进入确认页面"
+            android:id="@+id/buttongo"
+            android:layout_gravity="bottom|center"
+            android:background="@drawable/btn_selector"
+            android:layout_width="180dp"
+            android:layout_height="45dp" >
+        </Button>
+    </FrameLayout>
+
+
+
+
+
+
+
+</LinearLayout>

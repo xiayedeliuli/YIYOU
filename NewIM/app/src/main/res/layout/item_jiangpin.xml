@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f7f7f7">
+
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/url_dh"
+        android:background="#ededed"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/name_dh"
+                android:textSize="18sp"
+                android:textColor="#383838"
+                android:text="爱奇艺会员一个月"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="#5c5c5c"
+                android:id="@+id/leftnumber_dh"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                android:text="本周剩余15份"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="#5c5c5c"
+                android:id="@+id/beizhu_dh"
+                android:layout_marginTop="5dp"
+                android:textSize="10sp"
+                android:text="（请勿将账号与他人共享）"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_gravity="center"
+                    android:src="@drawable/jiangpinimg"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:id="@+id/integral_dh"
+                    android:textSize="15sp"
+                    android:textColor="#830c61"
+                    android:text="8积分"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/duihuanlay"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/jiangpin_drawable"
+            android:layout_alignParentRight="true"
+            android:layout_width="60dp"
+            android:layout_height="30dp">
+
+            <TextView
+                android:id="@+id/dhtxt"
+                android:textColor="#474747"
+                android:layout_centerInParent="true"
+                android:text="兑换"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

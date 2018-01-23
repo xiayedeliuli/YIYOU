@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 正常状态下的背景 -->
+    <item android:drawable="@drawable/layout_circlr_nopress" android:state_pressed="false"/>
+    <!-- 按下时的背景 -->
+    <item android:drawable="@drawable/layout_circlr_press" android:state_pressed="true"/>
+    <!-- 确认成功了的背景-->
+    <item android:drawable="@drawable/layout_circlr_success" android:state_enabled="false"/>
+    <!-- 确认失败了的背景-->
+    <item android:drawable="@drawable/layout_circlr_press" android:state_enabled="true"/>
+</selector>

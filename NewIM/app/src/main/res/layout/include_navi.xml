@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="#fff"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <View
+        android:id="@+id/v_top"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <ImageView
+       android:id="@+id/ffcc332"
+        android:background="#ffcc33"
+        android:layout_width="match_parent"
+        android:layout_height="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/ffcc33"
+        android:background="#ffcc33"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_title"
+        android:gravity="center_vertical"
+        >
+
+        <ImageView
+            android:id="@+id/tv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/margin_5"
+            android:paddingLeft="@dimen/margin_10"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/base_action_bar_back_bg_selector"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/style_text_large"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="2dp"
+            android:textColor="#000"
+            />
+
+        <ImageView
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_toLeftOf="@id/tv_title"
+            android:layout_centerInParent="true"
+            android:id="@+id/canzhao"
+            android:layout_width="20dp"
+            android:layout_height="28dp" />
+
+
+        <!--<TextView-->
+            <!--android:layout_toRightOf="@id/canzhao"-->
+            <!--android:id="@+id/tv_title1"-->
+            <!--style="@style/style_text_large"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_margin="2dp"-->
+            <!--android:textColor="@color/base_color_text_white"-->
+            <!--/>-->
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingTop="@dimen/margin_5"
+            android:paddingBottom="@dimen/margin_5"
+            android:paddingLeft="@dimen/margin_5"
+            android:paddingRight="@dimen/margin_5"
+            android:layout_marginRight="@dimen/margin_16"
+            android:layout_centerVertical="true"
+            android:textColor="@color/base_color_text_white"
+            android:textSize="@dimen/text_size_medium" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/frienddiv"
+        android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+
+
+
+    <!-- 一级 -->
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/friendlay"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <!-- 二级 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <!-- 三级 -->
+            <LinearLayout
+                android:id="@+id/xiangmu"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/xiangmu"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+
+
+
+
+
+                <TextView
+                    android:textSize="12sp"
+                    android:layout_gravity="center"
+                    android:text="项目"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- 三级 -->
+            <LinearLayout
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/timeicon"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/time"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"/>
+
+                <TextView
+                    android:textSize="11sp"
+                    android:layout_gravity="center"
+                    android:text="时间"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:background="#f7f7f7"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+
+        <!-- 二级 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textSize="12sp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="5dp"
+                android:layout_gravity="center"
+                android:minLines="2"
+                android:text="本次匹配"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content" />
+
+            <cn.iwgang.countdownview.CountdownView
+                android:layout_gravity="center"
+                android:id="@+id/counttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:isHideTimeBackground="false"
+                app:timeBgColor="#eabe39"
+                app:isShowMinute="true"
+                app:isShowSecond="true"
+                app:timeTextColor="#fff"
+                app:timeTextSize="22sp"
+                app:isTimeTextBold="true"
+                app:suffixGravity="center"
+                app:suffixTextColor="#000"
+                app:suffixTextSize="22sp"
+                app:suffixMinute=":"
+                />
+
+            <TextView
+                android:textSize="12sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:minLines="2"
+                android:text="剩余时间"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:background="#f7f7f7"
+            android:layout_width="1dp"
+            android:layout_height="match_parent" />
+
+
+        <!-- 二级 -->
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <!-- 三级 -->
+            <LinearLayout
+                android:id="@+id/zhaopian"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/queding"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"/>
+
+                <TextView
+                    android:textSize="11sp"
+                    android:layout_gravity="center"
+                    android:text="地点"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!-- 三级 -->
+            <LinearLayout
+                android:id="@+id/quedingpipei"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/queding2"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"/>
+
+                <TextView
+                    android:textSize="11sp"
+                    android:layout_gravity="center"
+                    android:text="确定"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/friendfdi"
+        android:background="#f7f7f7"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+
+</LinearLayout>
+
