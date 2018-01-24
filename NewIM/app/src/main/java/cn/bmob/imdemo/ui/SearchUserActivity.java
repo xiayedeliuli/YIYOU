@@ -1,11 +1,14 @@
 package cn.bmob.imdemo.ui;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -44,9 +47,7 @@ public class SearchUserActivity extends ParentWithNaviActivity {
     RecyclerView rc_view;
     LinearLayoutManager layoutManager;
     SearchUserAdapter adapter;
-    ImageView frienddiv;
-    ImageView frienddi;
-    LinearLayout friendlay;
+
 
     @Override
     protected String title() {
@@ -57,12 +58,10 @@ public class SearchUserActivity extends ParentWithNaviActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_user);
-        frienddiv= (ImageView) findViewById(R.id.frienddiv);
-        frienddi= (ImageView) findViewById(R.id.friendfdi);
-        friendlay= (LinearLayout) findViewById(R.id.friendlay);
-        friendlay.setVisibility(View.GONE);
-        frienddiv.setVisibility(View.GONE);
-        frienddi.setVisibility(View.GONE);
+        Window window=getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
         initNaviView();
         adapter = new SearchUserAdapter();
         layoutManager = new LinearLayoutManager(this);

@@ -67,7 +67,20 @@ public class MateMethod {
         mate.setMateUserFlag(false);
         mate.setSynchronizedID("");
         mate.setMateUserActivity(new String[]{"","",""});
-        mate.update(new UpdateListener() {
+        mate.update(sp.getString("Mate", ""),new UpdateListener() {
+            @Override
+            public void done(BmobException e) {
+
+            }
+        });
+    }
+
+    public static void StopMate(){
+        CancelTimerTask();
+        Mate mate=new Mate();
+        mate.setWhetherMatching(false);
+        mate.setMateUserFlag(false);
+        mate.update(sp.getString("Mate", ""),new UpdateListener() {
             @Override
             public void done(BmobException e) {
 

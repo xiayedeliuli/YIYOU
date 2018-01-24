@@ -17,13 +17,14 @@
         android:layout_height="0dp" />
 
     <ImageView
-       android:id="@+id/ffcc332"
+       android:id="@+id/topdivider_img"
         android:background="#ffcc33"
         android:layout_width="match_parent"
-        android:layout_height="15dp" />
+        android:layout_height="15dp"
+        android:visibility="visible"/>
 
     <RelativeLayout
-        android:id="@+id/ffcc33"
+        android:id="@+id/topdivider_Rlayout"
         android:background="#ffcc33"
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -57,20 +58,10 @@
             android:layout_marginRight="2dp"
             android:layout_toLeftOf="@id/tv_title"
             android:layout_centerInParent="true"
-            android:id="@+id/canzhao"
+            android:id="@+id/othersex_img"
             android:layout_width="20dp"
             android:layout_height="28dp" />
 
-
-        <!--<TextView-->
-            <!--android:layout_toRightOf="@id/canzhao"-->
-            <!--android:id="@+id/tv_title1"-->
-            <!--style="@style/style_text_large"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_margin="2dp"-->
-            <!--android:textColor="@color/base_color_text_white"-->
-            <!--/>-->
 
         <TextView
             android:id="@+id/tv_right"
@@ -101,8 +92,8 @@
 
     <!-- 一级 -->
     <LinearLayout
-        android:visibility="gone"
-        android:id="@+id/friendlay"
+        android:visibility="visible"
+        android:id="@+id/MateChat_Llayout"
         android:orientation="horizontal"
         android:padding="2dp"
         android:background="#fff"
@@ -119,7 +110,7 @@
 
             <!-- 三级 -->
             <LinearLayout
-                android:id="@+id/xiangmu"
+                android:id="@+id/Itemicon"
                 android:layout_weight="1"
                 android:layout_gravity="center"
                 android:orientation="vertical"
@@ -132,10 +123,6 @@
                     android:src="@drawable/xiangmu"
                     android:layout_width="25dp"
                     android:layout_height="25dp" />
-
-
-
-
 
                 <TextView
                     android:textSize="12sp"
@@ -291,15 +278,16 @@
             </LinearLayout>
 
         </LinearLayout>
-
     </LinearLayout>
 
     <ImageView
-        android:visibility="gone"
-        android:id="@+id/friendfdi"
+        android:visibility="visible"
+        android:id="@+id/divider_img"
         android:background="#f7f7f7"
         android:layout_width="match_parent"
         android:layout_height="1dp" />
+
+
 
 
 

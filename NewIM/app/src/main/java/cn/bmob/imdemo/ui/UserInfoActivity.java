@@ -1,7 +1,10 @@
 package cn.bmob.imdemo.ui;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -41,9 +44,6 @@ public class UserInfoActivity extends ParentWithNaviActivity {
     @Bind(R.id.btn_chat)
     Button btn_chat;
 
-    private LinearLayout friendlay;
-    private ImageView frienddiv;
-    private ImageView friendfdi;
     User user;
     BmobIMUserInfo info;
     @Override
@@ -55,9 +55,10 @@ public class UserInfoActivity extends ParentWithNaviActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
-        friendlay= (LinearLayout) findViewById(R.id.friendlay);
-        frienddiv= (ImageView) findViewById(R.id.frienddiv);
-        friendfdi= (ImageView) findViewById(R.id.friendfdi);
+        Window window=getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
         initNaviView();
         user=(User)getBundle().getSerializable("u");
         if(user.getObjectId().equals(getCurrentUid())){
@@ -71,9 +72,6 @@ public class UserInfoActivity extends ParentWithNaviActivity {
         info = new BmobIMUserInfo(user.getObjectId(),user.getUsername(),user.getAvatar());
         ImageLoaderFactory.getLoader().loadAvator(iv_avator,user.getAvatar(),R.mipmap.head);
         tv_name.setText(user.getUsername());
-        friendlay.setVisibility(View.GONE);
-        frienddiv.setVisibility(View.GONE);
-        friendfdi.setVisibility(View.GONE);
     }
 
     @OnClick(R.id.btn_add_friend)

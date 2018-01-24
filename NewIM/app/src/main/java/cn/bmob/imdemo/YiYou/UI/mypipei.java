@@ -366,7 +366,7 @@ public class mypipei extends BaseActivity {
     private void matchTEXT(TextView textView,String item,String space,TextView textView2,Long date){
         String itemspace=item+"-"+space;
         textView.setText(itemspace);
-        textView2.setText(MyUtils.getStringDate2(date));
+        textView2.setText(MyUtils.getStringDate(date));
     }
 
 }

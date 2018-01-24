@@ -59,6 +59,7 @@ import java.util.Map;
 import butterknife.Bind;
 import butterknife.OnClick;
 import cn.bmob.imdemo.R;
+import cn.bmob.imdemo.YiYou.Mate.Mate;
 import cn.bmob.imdemo.adapter.ChatAdapter;
 import cn.bmob.imdemo.adapter.OnRecyclerViewListener;
 import cn.bmob.imdemo.base.ParentWithNaviActivity;
@@ -85,6 +86,7 @@ import cn.bmob.newim.listener.MessagesQueryListener;
 import cn.bmob.newim.listener.ObseverListener;
 import cn.bmob.newim.listener.OnRecordChangeListener;
 import cn.bmob.newim.notification.BmobNotificationManager;
+import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobRealTimeData;
 import cn.bmob.v3.BmobUser;
@@ -146,21 +148,21 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
     ImageView iv_record;
     private Drawable[] drawable_Anims;// 话筒动画
     BmobRecordManager recordManager;
-    private ImageView seximg;
+    private ImageView othersex_img;
     ImageView timeicon;
-    LinearLayout xiangmu;
+    LinearLayout Itemicon;
     AlertDialog dialog;
-    boolean ble;
+    boolean flag;
     ImageView mimg;
     Handler handler;
     Dialog mydialog;
-    boolean flag;
+    boolean FirstShowRealavater=true;
     ChatAdapter adapter;
     protected LinearLayoutManager layoutManager;
     BmobIMConversation c;
     ImageView frienddiv;
-    LinearLayout friendlay;
-    ImageView friendfdi;
+    LinearLayout MateChat_Llayout;
+    ImageView divider_img;
     LinearLayout quedingpipei;
     BmobRealTimeData rtd;
     LinearLayout zhaopian;
@@ -170,16 +172,18 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
     TextView myItem;
     TextView myDate;
     TextView mySure;
-    String otherURL;
+    String otherRealURL="";
     Long OtherDate;
     String item;
     String item2;
-    LinearLayout matchino;
-    RelativeLayout ffcc33;
+    LinearLayout mateinfo_Llayout;
+    RelativeLayout topdivider_Rlayout;
     TextView myspace;
     TextView otherspce;
-    ImageView ffcc332;
+    ImageView topdivider_img;
     Boolean isjx;
+    Boolean IsMateChat=false;
+    String  OtherUserID="";
 
     @Override
     protected String title() {
@@ -195,7 +199,7 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
         MyApplication.ensure=false;
-        matchino= (LinearLayout) findViewById(R.id.matchino);
+        mateinfo_Llayout= (LinearLayout) findViewById(R.id.mateinfo_Llayout);
         myItem= (TextView) findViewById(R.id.myitem);
         myDate= (TextView) findViewById(R.id.myDate);
         mySure= (TextView) findViewById(R.id.mysure);
@@ -203,130 +207,65 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
         otherItem= (TextView) findViewById(R.id.otheritem);
         otherDate= (TextView) findViewById(R.id.otherdate);
         otherSure= (TextView) findViewById(R.id.othersure);
-        seximg= (ImageView) findViewById(R.id.canzhao);
+        othersex_img= (ImageView) findViewById(R.id.othersex_img);
         mimg= (ImageView) findViewById(R.id.mimg);
         frienddiv= (ImageView) findViewById(R.id.frienddiv);
-        friendlay= (LinearLayout) findViewById(R.id.friendlay);
-        friendfdi= (ImageView) findViewById(R.id.friendfdi);
+        MateChat_Llayout= (LinearLayout) findViewById(R.id.MateChat_Llayout);
+        divider_img= (ImageView) findViewById(R.id.divider_img);
         quedingpipei= (LinearLayout) findViewById(R.id.quedingpipei);
-        ffcc33= (RelativeLayout) findViewById(R.id.ffcc33);
-        ffcc332= (ImageView) findViewById(R.id.ffcc332);
+        topdivider_Rlayout= (RelativeLayout) findViewById(R.id.topdivider_Rlayout);
+        topdivider_img= (ImageView) findViewById(R.id.topdivider_img);
         myspace= (TextView) findViewById(R.id.myspace);
         otherspce= (TextView) findViewById(R.id.otherspace);
+        timeicon= (ImageView) findViewById(R.id.timeicon);
+        Itemicon= (LinearLayout) findViewById(R.id.Itemicon);
         c = BmobIMConversation.obtain(BmobIMClient.getInstance(), (BmobIMConversation) getBundle().getSerializable("c"));
         initNaviView();
         initSwipeLayout();
         initVoiceView();
         initBottomView();
+        IsMateChat=getBundle().getBoolean("IsMate");
+        OtherUserID=getBundle().getString("MateID");
         //设置匹配跳转的时候跳转到匿名还有监听方法
-        if(MyApplication.isMateChatActivity){
-            MyApplication.ischatnow=true;
-            //删除指定会话
+        if(IsMateChat){
+            //删除会话
             BmobIM.getInstance().deleteConversation(c);
-            toast("如您发现对方使用非真实照片，请您积极向客服反应！核实后您会获得对方赔付的奖励");
-            if(null==MyApplication.myappdate){
-                MyApplication.myappdate=System.currentTimeMillis();
-            }
-            if(null==OtherDate){
-                OtherDate=System.currentTimeMillis();
-            }
-            Log.d("bmob4",""+MyApplication.OtherObjectId);
-            if(MyApplication.OtherObjectId.length()>0){
-                Log.d("bmob4",""+"这个方法执行了没");
-                BmobQuery<MyUser> query=new BmobQuery<MyUser>();
-                query.getObject(MyApplication.OtherObjectId, new QueryListener<MyUser>() {
-                    @Override
-                    public void done(MyUser myUser, BmobException e) {
-                        if(e==null){
-                            Log.d("xzf",""+MyApplication.isJXpipei);
-                            if(!MyApplication.isJXpipei){
-                                item=MyApplication.item;
-                                myItem.setText(MyApplication.item);
-                                item2=myUser.getItem();
-                                otherItem.setText(item2);
-                                otherDate.setText(MyUtils.getStringDate2(myUser.getDate()));
-                                if(null!=MyApplication.myappdate){
-                                    myDate.setText(MyUtils.getStringDate2(MyApplication.myappdate));
-                                }
-                                tv_title.setText("(匿名)");
-                                isjx=false;
-                                //还要设置地点
-                            }else{
-                                //跳转完了初始化条件
-                                MyUser myUse=new MyUser();
-                                myUse.setWasMated("尚未匹配");
-                                myUse.setJXpipei("");
-                                myUse.setJXpipei2("");
-                                myUse.setItem("待选");
-                                myUse.setSpace("集合地点");
-                                myUser.setAreJianting(true);
-                                myUse.setDate(System.currentTimeMillis());
-                                myUse.setEnsure(false);
-                                myUse.setOnback(false);
-                                myUse.update(sp.getString("userMateID", ""),new UpdateListener() {
-                                    @Override
-                                    public void done(BmobException e) {
-                                        if(e!=null){
-                                            Log.d("bmob",""+e.getErrorCode()+e.getMessage());
-                                        }
-                                    }
-                                });
-                                isjx=true;
-                                myItem.setText("待选");
-                                otherItem.setText("待选");
-                                myspace.setText("集合地点");
-                                otherspce.setText("集合地点");
-                                myDate.setText(MyUtils.getStringDate2(System.currentTimeMillis()));
-                                otherDate.setText(MyUtils.getStringDate2(System.currentTimeMillis()));
-                            }
-                            if(null!=myUser.getUserRealAvater()){
-                                otherURL=myUser.getUserRealAvater();
-                            }else{
-                                otherURL="1";
-                            }
-                            if(myUser.getUsersex().equals("男")){
-                                seximg.setImageResource(R.drawable.boy);
-                            }else{
-                                seximg.setImageResource(R.drawable.girl);
-                            }
-                        }else{
-                            Log.d("bmob4",""+e.getErrorCode()+e.getMessage());
-                        }
-                    }
-                });
-            }
-            friendlay.setVisibility(View.VISIBLE);
-            friendfdi.setVisibility(View.VISIBLE);
-            matchino.setVisibility(View.VISIBLE);
-            ffcc33.setBackgroundResource(R.color.color_theme);
-            ffcc332.setBackgroundResource(R.color.color_theme);
+            MyApplication.MateChativityFront=true;
+            MateChat_Llayout.setVisibility(View.VISIBLE);
+            divider_img.setVisibility(View.VISIBLE);
+            mateinfo_Llayout.setVisibility(View.VISIBLE);
+            topdivider_Rlayout.setBackgroundResource(R.color.color_theme);
+            topdivider_img.setBackgroundResource(R.color.color_theme);
             tv_title.setTextColor(getResources().getColor(R.color.base_color_text_white));
-            flag=true;
-            //监听方法
-            jianting();
-            //确定按钮
-            quedingpipei.setOnClickListener(new View.OnClickListener() {
+            tv_title.setText("匿名");
+            toast("如您发现对方使用非真实照片，请您积极向客服反应！核实后您会获得对方赔付的奖励");
+            myItem.setText("待选");
+            otherItem.setText("待选");
+            myspace.setText("集合地点");
+            otherspce.setText("集合地点");
+            myDate.setText(MyUtils.getStringDate(System.currentTimeMillis()));
+            otherDate.setText(MyUtils.getStringDate(System.currentTimeMillis()));
+            BmobQuery<User> query=new BmobQuery<>();
+            query.getObject(OtherUserID, new QueryListener<User>() {
                 @Override
-                public void onClick(View view) {
-                    setMydialog();
+                public void done(User user, BmobException e) {
+                    if(e==null){
+                        if(null!=user.getRealavatar()){
+                            otherRealURL=user.getRealavatar();
+                        }
+                        if(user.getSex().equals("男")){
+                                othersex_img.setImageResource(R.drawable.boy);
+                            }else{
+                                othersex_img.setImageResource(R.drawable.girl);
+                            }
+                    }
                 }
             });
             //时间重新选择
-            timeicon= (ImageView) findViewById(R.id.timeicon);
             timeicon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    showDialog();
-                }
-            });
-            //项目于的重新选择
-            xiangmu= (LinearLayout) findViewById(R.id.xiangmu);
-            xiangmu.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                        ble=true;
-                        String arr[]={"篮球","图书馆","约牌","散步","羽毛球","乒乓球","下午茶","电影院","KTV"};
-                        Dialog(arr);
+                    ShowTimeDialog();
                 }
             });
             //倒计时控件
@@ -339,93 +278,161 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
                     finish();
                 }
             });
-            //选择集合地点
-            zhaopian.setOnClickListener(new View.OnClickListener() {
+            //项目于的重新选择
+            Itemicon.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                    android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(ChatActivity.this);
-                    final String[]arr={"南京财经大学操场","南京财经大学图书馆","南京财经大学校门","南京邮电大学操场","南京邮电大学图书馆",
-                            "南京邮电大学校门","南京师范大学操场","南京师范大学图书馆","南京师范大学校门"};
-                    builder.setItems(arr, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, final int which) {
-                            String space="南"+arr[which].substring(2,3)+arr[which].substring(6);
-                            myspace.setText(space);
-                            gaoliang1();
-                            //保存到服务器上
-                            MyUser myUser=new MyUser();
-                            myUser.setSpace(arr[which]);
-                            myUser.setAreJianting(true);
-                            myUser.update(sp.getString("userMateID",""), new UpdateListener() {
-                                @Override
-                                public void done(BmobException e) {
-                                    if(e==null){
-                                        Toast.makeText(ChatActivity.this,"您选择了"+arr[which],Toast.LENGTH_SHORT).show();
-                                    }else{
-                                        myspace.setText("意外错误");
-                                    }
-                                }
-                            });
-                        }
-                    });
-                    builder.create().show();
+                public void onClick(View view) {
+                    flag=true;
+                    String arr[]={"篮球","图书馆","约牌","散步","羽毛球","乒乓球","下午茶","电影院","KTV"};
+                    ShowItemDialog(arr);
                 }
             });
-            handler=new Handler(){
-                @Override
-                public void handleMessage(Message msg) {
-                    final Bitmap bitmap= (Bitmap) msg.obj;
-                    CountDownTimer cd=new CountDownTimer(2001,2000) {
-                        @Override
-                        public void onTick(long l) {
-                            openimagedialog(bitmap);
-                        }
+//            MyApplication.ischatnow=true;
+//            if(null==MyApplication.myappdate){
+//                MyApplication.myappdate=System.currentTimeMillis();
+//            }
+//            if(null==OtherDate){
+//                OtherDate=System.currentTimeMillis();
+//            }
+//            if(OtherUserID.length()>0){
+//                Log.d("bmob4",""+"这个方法执行了没");
+//                BmobQuery<MyUser> query=new BmobQuery<MyUser>();
+//                query.getObject(OtherUserID, new QueryListener<MyUser>() {
+//                    @Override
+//                    public void done(MyUser otheruser, BmobException e) {
+//                        if(e==null){
+//                            Log.d("xzf",""+MyApplication.isJXpipei);
+//                            if(!MyApplication.isJXpipei){
+//                                item=MyApplication.item;
+//                                myItem.setText(MyApplication.item);
+//                                item2=otheruser.getItem();
+//                                otherItem.setText(item2);
+//                                otherDate.setText(MyUtils.getStringDate2(otheruser.getDate()));
+//                                if(null!=MyApplication.myappdate){
+//                                    myDate.setText(MyUtils.getStringDate2(MyApplication.myappdate));
+//                                }
+//                                tv_title.setText("(匿名)");
+//                                isjx=false;
+//                                //还要设置地点
+//                            }else{
+//                                isjx=true;
+//                                myItem.setText("待选");
+//                                otherItem.setText("待选");
+//                                myspace.setText("集合地点");
+//                                otherspce.setText("集合地点");
+//                                myDate.setText(MyUtils.getStringDate2(System.currentTimeMillis()));
+//                                otherDate.setText(MyUtils.getStringDate2(System.currentTimeMillis()));
+//                            }
+//                            if(null!=otheruser.getUserRealAvater()){
+//                                otherURL=otheruser.getUserRealAvater();
+//                            }else{
+//                                otherURL="1";
+//                            }
+//                            if(otheruser.getUsersex().equals("男")){
+//                                seximg.setImageResource(R.drawable.boy);
+//                            }else{
+//                                seximg.setImageResource(R.drawable.girl);
+//                            }
+//                        }else{
+//                            Log.d("bmob4",""+e.getErrorCode()+e.getMessage());
+//                        }
+//                    }
+//                });
+//            }
+//            //监听方法
+//            jianting();
+//            //确定按钮
+//            quedingpipei.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    setMydialog();
+//                }
+//            });
 
-                        @Override
-                        public void onFinish() {
-                            mydialog.cancel();
-                        }
-                    };
-                    cd.start();
-                }
-            };
+//            //选择集合地点
+//            zhaopian.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(ChatActivity.this);
+//                    final String[]arr={"南京财经大学操场","南京财经大学图书馆","南京财经大学校门","南京邮电大学操场","南京邮电大学图书馆",
+//                            "南京邮电大学校门","南京师范大学操场","南京师范大学图书馆","南京师范大学校门"};
+//                    builder.setItems(arr, new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, final int which) {
+//                            String space="南"+arr[which].substring(2,3)+arr[which].substring(6);
+//                            myspace.setText(space);
+//                            gaoliang1();
+//                            //保存到服务器上
+//                            MyUser myUser=new MyUser();
+//                            myUser.setSpace(arr[which]);
+//                            myUser.setAreJianting(true);
+//                            myUser.update(sp.getString("userMateID",""), new UpdateListener() {
+//                                @Override
+//                                public void done(BmobException e) {
+//                                    if(e==null){
+//                                        Toast.makeText(ChatActivity.this,"您选择了"+arr[which],Toast.LENGTH_SHORT).show();
+//                                    }else{
+//                                        myspace.setText("意外错误");
+//                                    }
+//                                }
+//                            });
+//                        }
+//                    });
+//                    builder.create().show();
+//                }
+//            });
+//            handler=new Handler(){
+//                @Override
+//                public void handleMessage(Message msg) {
+//                    final Bitmap bitmap= (Bitmap) msg.obj;
+//                    CountDownTimer cd=new CountDownTimer(2001,2000) {
+//                        @Override
+//                        public void onTick(long l) {
+//                            openimagedialog(bitmap);
+//                        }
+//
+//                        @Override
+//                        public void onFinish() {
+//                            mydialog.cancel();
+//                        }
+//                    };
+//                    cd.start();
+//                }
+//            };
         }
-
-
     }
 
-    private void Dialog(final String[] str){
-        if(ble){
+    private void ShowItemDialog(final String[] str){
+        if(flag){
             AlertDialog.Builder builder=new AlertDialog.Builder(ChatActivity.this);
             builder.setTitle("请选择项目");
             builder.setSingleChoiceItems(str, 0, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, final int i) {
                     dialog.dismiss();
-                    MyUser myUser=new MyUser();
-                    myUser.setAreJianting(true);
-                    myUser.setItem(str[i]);
-                    myUser.update(sp.getString("userMateID",""), new UpdateListener() {
+                    Mate mate=new Mate();
+                    mate.setMateItem(str[i]);
+                    mate.update(sp.getString("Mate", ""), new UpdateListener() {
                         @Override
                         public void done(BmobException e) {
-                               if(e==null){
-                                   Toast.makeText(ChatActivity.this,"您选择了"+str[i],Toast.LENGTH_SHORT).show();
-                                   myItem.setText(str[i]);
-                                   MyApplication.item=str[i];
-                                   gaoliang1();
-                               }
+                            if(e==null){
+                                Toast.makeText(ChatActivity.this,"您选择了"+str[i],Toast.LENGTH_SHORT).show();
+                                myItem.setText(str[i]);
+                                gaoliang();
+                            }
                         }
                     });
                 }
+
             });
             dialog=builder.create();
             dialog.show();
-            ble=false;
+            flag=false;
         }
     }
 
 
-    public void showDialog() {
+    public void ShowTimeDialog() {
         DateTimePickerDialog dialog = new DateTimePickerDialog(ChatActivity.this,
                 System.currentTimeMillis());
         /**
@@ -434,15 +441,14 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
         dialog.setOnDateTimeSetListener(new DateTimePickerDialog.OnDateTimeSetListener() {
             @Override
             public void OnDateTimeSet(android.support.v7.app.AlertDialog dialog, final long date) {
-                MyUser mm=new MyUser();
-                mm.setAreJianting(true);
-                mm.setDate(date);
-                mm.update(sp.getString("userMateID",""), new UpdateListener() {
+                //时间改变了改服务器上传的数据
+                Mate mate=new Mate();
+                mate.setMateTIme(date);
+                mate.update(sp.getString("Mate", ""), new UpdateListener() {
                     @Override
                     public void done(BmobException e) {
                         if(e==null){
-                            MyApplication.myappdate=date;
-                            myDate.setText(MyUtils.getStringDate2(date));
+                            myDate.setText(MyUtils.getStringDate(date));
                             Toast.makeText(ChatActivity.this,"匹配时间设置成功",Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(ChatActivity.this,"系统错误，请重新尝试",Toast.LENGTH_SHORT).show();
@@ -774,16 +780,16 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
     @OnClick(R.id.tv_camera)
     public void onCameraClick(View view) {
         if(MyApplication.isMateChatActivity){
-            if(otherURL.toString().length()<5){
+            if(otherRealURL.toString().length()<5){
                 Toast.makeText(ChatActivity.this, "对方首次匹配，暂未设置真人照片", Toast.LENGTH_SHORT).show();
             }else{
-                if(flag){
+                if(FirstShowRealavater){
                     new Thread(){
                         @Override
                         public void run() {
                             Message msg=Message.obtain();
                             try {
-                                msg.obj=getBitmap(otherURL);
+                                msg.obj=getBitmap(otherRealURL);
                                 handler.sendMessage(msg);
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -791,7 +797,7 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
                         }
                     }.start();
                     Toast.makeText(ChatActivity.this, "3秒后取消显示", Toast.LENGTH_SHORT).show();
-                    flag=false;
+                    FirstShowRealavater=false;
                 }else{
                     Toast.makeText(ChatActivity.this, "您已看过一次，无法再看", Toast.LENGTH_SHORT).show();
                 }
@@ -1196,6 +1202,7 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        MyApplication.MateChativityFront=false;
         Log.d("xzf6","退出方法执行了");
         if(MyApplication.isMateChatActivity){
             MyApplication.shuaxin=true;
@@ -1221,13 +1228,13 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
 
     private void jianting(){
         Log.d("bmob",""+MyApplication.OtherObjectId);
-        if(MyApplication.OtherObjectId.length()>0){
+        if(OtherUserID.length()>0){
            rtd= new BmobRealTimeData();
             rtd.start(new ValueEventListener() {
                 @Override
                 public void onDataChange(JSONObject data) {
                     final BmobQuery<MyUser> query=new BmobQuery<MyUser>();
-                    query.getObject(MyApplication.OtherObjectId, new QueryListener<MyUser>() {
+                    query.getObject(OtherUserID, new QueryListener<MyUser>() {
                         @Override
                         public void done(final MyUser myUser, BmobException e) {
                             if(e==null){
@@ -1240,9 +1247,9 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
                                 }else{
                                     otherspce.setText(myUser.getSpace());
                                 }
-                                gaoliang1();
+                                gaoliang();
                                 OtherDate=myUser.getDate();
-                                otherDate.setText(MyUtils.getStringDate2(myUser.getDate()));
+                                otherDate.setText(MyUtils.getStringDate(myUser.getDate()));
                                 if(myUser.getOnback()&!myUser.getEnsure()){
                                     Toast.makeText(ChatActivity.this,"对方已退出会话",Toast.LENGTH_SHORT).show();
                                     finish();
@@ -1375,7 +1382,7 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
     }
 
     //检测自己的项目和对方是不是一样，不然就高亮显示
-    private void gaoliang1(){
+    private void gaoliang(){
         if(!myItem.getText().toString().equals(otherItem.getText().toString())){
             myItem.setTextColor(Color.RED);
         }else if(myItem.getText().toString().equals(otherItem.getText().toString())&!myItem.getText().equals("待选")){
@@ -1398,6 +1405,7 @@ public class ChatActivity extends ParentWithNaviActivity implements ObseverListe
         intent.putExtra("te", "刷");
         sendBroadcast(intent);
     }
+
 
 
 

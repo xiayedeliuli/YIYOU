@@ -12,7 +12,6 @@ public class MyApplication extends Application {
     //记录关于自己设定的匹配属性，省得查询
      public static String item;
     public static Long myappdate;
-    public static String choicesex;
 
     //这个flag用来判断匹配弹出的对话和正常对话里的对话
     public static boolean isMateChatActivity;
@@ -65,6 +64,9 @@ public class MyApplication extends Application {
     public static Boolean huihua;
 
     public static Boolean aremills;
+
+    //如果匹配界面在前台这个属性为true
+    public static Boolean MateChativityFront=false;
 
 
 }

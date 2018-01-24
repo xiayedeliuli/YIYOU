@@ -156,10 +156,6 @@ public class MyUtils {
         return file;
     }
 
-    public static String getStringDate2(Long date) {
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("MM月dd日HH:mm");
-        return formatter.format(date);
-    }
 
     public static String getDateTimeFromMillisecond(Long millisecond){
         @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -331,7 +327,7 @@ public class MyUtils {
     }
 
     public static String time(String date){
-        String now=MyUtils.getStringDate2(System.currentTimeMillis());
+        String now=MyUtils.getStringDate(System.currentTimeMillis());
         //月份相同
         if(date.substring(5,7).equals(now.substring(0,2))){
             int day1=Integer.parseInt(now.substring(3,5));
@@ -430,25 +426,14 @@ public class MyUtils {
         return  savePath;
     }
 
-    public static long getStringToDate(String time) {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date date = new Date();
-        try {
-            date = sdf.parse(time);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return date.getTime();
-    }
 
     /**
      * 将长时间格式字符串转换为时间 yyyy-MM-dd HH:mm:ss
      */
     public static String getStringDate(Long date) {
-        SimpleDateFormat formatter = new SimpleDateFormat("MM-dd HH:mm:ss");
-        String dateString = formatter.format(date);
-        return dateString;
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat formatter = new SimpleDateFormat("MM月dd日HH:mm");
+        return formatter.format(date);
     }
 
 

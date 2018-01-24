@@ -74,7 +74,7 @@ public class matchinfo extends BaseActivity {
         }else{
             zhengzaijingxing.setText("正在进行");
         }
-        matchtime.setText(MyUtils.getStringDate2(lastInfo.getLastTime()));
+        matchtime.setText(MyUtils.getStringDate(lastInfo.getLastTime()));
         MyUtils.matchlay(matchlay,lastInfo.getLastItem());
         realtimelocation.setOnClickListener(new View.OnClickListener() {
                         @Override

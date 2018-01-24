@@ -260,7 +260,7 @@ public class MateFragment extends android.support.v4.app.Fragment {
     private void matchTEXT(TextView textView,String item,String space,TextView textView2,Long date){
         String itemspace=item+"-"+space;
         textView.setText(itemspace);
-        textView2.setText(MyUtils.getStringDate2(date));
+        textView2.setText(MyUtils.getStringDate(date));
     }
 
     public class fragment1adapter extends BaseAdapter{
@@ -618,7 +618,8 @@ private void listviewclick(List<LastInfo> mylist){
                     @Override
                     public void done(Mate user, BmobException e) {
                         if(e==null){
-                            if(user.getMateUserFlag()&&null!=user.getMateUserActivity()){
+                            /*增加了对当前前台是否是MateActiivty的判断*/
+                            if(user.getMateUserFlag()&&null!=user.getMateUserActivity()&&!MyApplication.MateChativityFront){
                                 Log.d("xzf","Mate查询方法");
                                 String[] Info=new String[3];
                                 System.arraycopy(user.getMateUserActivity(),0,Info,0,3);
@@ -629,9 +630,14 @@ private void listviewclick(List<LastInfo> mylist){
                                     BmobIMConversation c = BmobIM.getInstance().startPrivateConversation(MateInfo, false, null);
                                     Bundle bundle = new Bundle();
                                     bundle.putSerializable("c", c);
+                                    bundle.putBoolean("IsMate",true);
+                                    //传入的这个是跳转用户的userid-o
+                                    bundle.putString("MateID",Info[0]);
                                     startActivity(ChatActivity.class, bundle, false);
                                    //匹配成功对表的修改
-                                    MateMethod.ResetMate();
+                                    MateMethod.StopMate();
+                                  //重置MateFragment
+                                    SendCancelBrocast();
                             }
                         }
                     }

@@ -12,7 +12,7 @@
 
 
     <LinearLayout
-        android:id="@+id/matchino"
+        android:id="@+id/mateinfo_Llayout"
         android:visibility="gone"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
